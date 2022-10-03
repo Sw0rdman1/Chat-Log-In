@@ -3,7 +3,6 @@ import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import { AccountCircle } from "@mui/icons-material";
 import { Field } from "react-final-form";
-import { fontSize } from "@mui/system";
 
 export default function InputWithIcon({ labelName, placeholder, fieldName }) {
    return (
@@ -14,6 +13,7 @@ export default function InputWithIcon({ labelName, placeholder, fieldName }) {
                   fontSize: "25px",
                   display: "flex",
                   alignItems: "flex-end",
+                  width: "100%",
                }}
             >
                <Field name={fieldName}>

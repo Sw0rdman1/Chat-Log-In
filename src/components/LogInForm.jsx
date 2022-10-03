@@ -12,24 +12,38 @@ export default function LogInForm() {
    };
 
    return (
-      <Form
-         onSubmit={onSubmit}
-         validate={validate}
-         render={({ handleSubmit }) => (
-            <form
-               className="login-form"
-               onSubmit={handleSubmit}
-            >
-               <UsernameInput
-                  labelName="Username"
-                  placeholder="admin"
-                  fieldName="username"
-               />
-               <PasswordInput />
+      <div className="log-in-container">
+         <h1>Welcome</h1>
+         <Form
+            onSubmit={onSubmit}
+            validate={validate}
+            render={({ handleSubmit }) => (
+               <form
+                  className="login-form"
+                  onSubmit={handleSubmit}
+               >
+                  <UsernameInput
+                     labelName="Username"
+                     placeholder="admin"
+                     fieldName="username"
+                  />
+                  <PasswordInput />
 
-               <button type="submit">Submit</button>
-            </form>
-         )}
-      />
+                  <div class="tacbox">
+                     <input
+                        id="checkbox"
+                        type="checkbox"
+                     />
+                     <label for="checkbox">
+                        {" "}
+                        I agree to these <a href="#">Terms and Conditions</a>.
+                     </label>
+                  </div>
+
+                  <button type="submit">Log In</button>
+               </form>
+            )}
+         />
+      </div>
    );
 }
