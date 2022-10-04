@@ -3,25 +3,34 @@ import UsernameInput from "./UsernameInput";
 import PasswordInput from "./PasswordInput";
 
 export default function LogInForm() {
-   const onSubmit = () => {
-      console.log("onSubmit");
-   };
+   const onSubmit = (e) => {};
 
-   const validate = () => {
-      console.log("validate");
+   const validate = (e) => {
+      const errors = {};
+
+      if (e.username && e.username.length < 5) {
+         errors.username = "Minimum 5 characters";
+      }
+
+      if (e.password1 && e.password1.length < 8) {
+         errors.password1 = "Minimum 8 characters";
+      }
+
+      return errors;
    };
 
    return (
-      <div className="log-in-container">
-         <h1>Welcome</h1>
+      <div className="login-div">
          <Form
             onSubmit={onSubmit}
             validate={validate}
             render={({ handleSubmit }) => (
                <form
-                  className="login-form"
                   onSubmit={handleSubmit}
+                  className="log-in-container"
                >
+                  <h1>Welcome</h1>
+
                   <UsernameInput
                      labelName="Username"
                      placeholder="admin"

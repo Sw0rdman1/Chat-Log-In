@@ -36,28 +36,30 @@ export default function PasswordInput() {
    return (
       <div className="password-input">
          <FormControl
-            sx={{ m: 1 }}
+            sx={{ m: 1, width: "40ch", marginLeft: "1ch" }}
             variant="standard"
          >
             <InputLabel
                sx={{ fontSize: "20px" }}
                htmlFor="standard-adornment-password"
+               color="secondary"
             >
                Password
             </InputLabel>
 
-            <Field name="password">
+            <Field name="password1">
                {({ input, meta }) => (
                   <div>
                      <Input
                         sx={{ fontSize: "28px", paddingTop: "16px" }}
                         label="password"
                         variant="standard"
-                        {...input}
                         id="standard-adornment-password"
                         type={values.showPassword ? "text" : "password"}
                         value={values.password}
+                        color="secondary"
                         onChange={handleChange("password")}
+                        {...input}
                         endAdornment={
                            <InputAdornment position="end">
                               <IconButton
@@ -74,7 +76,17 @@ export default function PasswordInput() {
                            </InputAdornment>
                         }
                      />
-                     {meta.touched && meta.error && <span>{meta.error}</span>}
+                     {meta.touched && meta.error && (
+                        <span
+                           style={{
+                              display: "block",
+                              color: "red",
+                              fontSize: "13px",
+                           }}
+                        >
+                           {meta.error}
+                        </span>
+                     )}
                   </div>
                )}
             </Field>
