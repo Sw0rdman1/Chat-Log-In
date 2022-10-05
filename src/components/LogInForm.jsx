@@ -50,6 +50,12 @@ export default function LogInForm() {
                   </div>
 
                   <button type="submit">Log In</button>
+                  <a
+                     className="forgot-password"
+                     href="#"
+                  >
+                     Forgot password?
+                  </a>
                </form>
             )}
          />
